@@ -1,0 +1,16 @@
+apiVersion: netbox.dev/v1
+kind: VLANClaim
+metadata:
+  name: vlanclaim-sample
+spec:
+  vlanId: 100
+  name: test-cluster-sample-nad
+  site: Site-1
+  sourceRef:
+    apiVersion: k8s.cni.cncf.io/v1
+    kind: NetworkAttachmentDefinition
+    name: sample-nad
+    namespace: default
+  vlanGroup: Group-1
+  description: "Sample VLAN Claim managed by NetBox Operator"
+  preserveInNetbox: false
